@@ -22,48 +22,56 @@ var time= setInterval(function(){
         seconds();
     }
 },10);
+
 //to stop the watch
+
 stop.addEventListener('click',function()
 {
     started=false;
     clearInterval(time)
 });
+
 //to reset the watch
+
 reset.addEventListener('click',function()
 {   
     started=false;
     clearInterval(time);
     
     // clearing the timer
-            ms.innerText="00";
+            
+    ms.innerText="00";
             sec.innerText="00";
             min.innerText="00";
     
-            // hidding buttons
+    // hidding buttons
+            
             lap_div.style.visibility="hidden";
             stop.style.display="none";
             reset.style.display="none";
             lap.style.display="none";
+            lap_heading.style.display="none";
             
-            //removing  laps
+    //removing  laps
+            
             var child=document.querySelectorAll('#lap-div p');
-    
-            lap_heading.style.visibility="hidden";
-    for(let i=0;i< child.length;i++)
-    {console.log(child);
-        lap_div.removeChild(child[i]);
-    }
+            for(let i=0;i< child.length;i++)
+            {console.log(child);
+                lap_div.removeChild(child[i]);
+            }
     num=1;
 });
 
 }
 var num=1;
+
 //func to add laps
+
 lap.addEventListener('click',function(){
     if(started) 
     { 
         lap_div.style.visibility="visible";
-        lap_heading.style.visibility="visible";
+        lap_heading.style.display="block";
         var p = document.createElement('p');
         p.classList.add('para-style');
       p.innerHTML=num+". "+hours.innerText+":"+min.innerText+":"+sec.innerText+":"+ms.innerText;
@@ -74,6 +82,8 @@ lap.addEventListener('click',function(){
 });
 
 
+//logic for timer
+//to increase the seconds
 
 function seconds()
 {
@@ -84,6 +94,9 @@ function seconds()
         minutes();
     }
 }
+
+//to increase the minutes
+
 function minutes()
 {
     min.innerText=String(1+parseInt(min.innerText)).padStart(2,'0');
@@ -93,6 +106,9 @@ function minutes()
         hour();
     }
 }
+
+//to increase the hour
+
 function hour()
 {
     hours.innerText=String(1+parseInt(hour.innerText)).padStart(2,'0');
@@ -102,11 +118,17 @@ function hour()
 
     }
 }
+
+//adding event to start
+
 var started=false;
 start.addEventListener('click',function()
 {
     if(!started)
        { started=true;
+            
+        //showing buttons
+
             stop.style.display="inline-block";
             reset.style.display="inline-block";
             lap.style.display="inline-block";

@@ -106,7 +106,7 @@ button:hover
 }
 #lap-heading
 {
-    display: hidden;
+    display: none;
     margin-bottom: 0;
 }
 @media screen and (max-width:813px) {
