@@ -1,11 +1,29 @@
+body{
+    margin:0px;
+    background: linear-gradient(
+        45deg
+        ,#4AC29A, #BDFFF3,red);
+        height: 100vh;
+        font-family: sans-serif,monospace;
+}
+#outer-div
+{
+    display: flex;
+    /* text-align: center; */
+    justify-content: center;
+    /* width: 100vw;*/
+    max-height: 100vh;
+}
 #stop-watch-div
 {
-    width: 50%;
-    background: aliceblue;
+    width: 30%;
+    /* background: aliceblue; */
+    text-align: center;
+    margin-top: 9rem;
 }
 #timer
 {
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
     width: 100%;
     /* height: 20
 vh
@@ -18,7 +36,6 @@ vh
 .num
 {
     font-size: 4rem;
-    
 }
 .dots
 {
@@ -33,5 +50,76 @@ vh
     margin-bottom: 0.6rem;
     border-radius: 50%;
     background-color: black;
+
+}
+button
+{
+    font-size: 1.5rem;
+    padding: 10px 10px 10px 10px;
+    border-radius: 28%;
+    margin: 1rem 1rem 1rem 0rem;
+    transition: all 0.5s ;
+}
+
+button:hover
+{
+    box-shadow: 9px 4px 8px 4px;
+    transform: scale(1.2);
+}
+#start
+{
+    background: indianred;
+    transform: scale(1.2);
+}
+#stop
+{
+    background: lightgoldenrodyellow;
+ 
+    display: none;
+}
+
+#reset
+{
+    background: cadetblue;
+    display: none;
+}
+#lap-div
+{
+    visibility: hidden;
+    
+    overflow: scroll;
+    height: 26vh;
+}
+#lap-div::-webkit-scrollbar
+{
+    display: none;
+}
+#lap
+{
+    background: darkseagreen;
+    display: none;
+}
+.para-style
+{
+    font-size: 2rem;
+    margin: 1rem 0px 0px 0px;
+}
+#lap-heading
+{
+    display: hidden;
+    margin-bottom: 0;
+}
+@media screen and (max-width:813px) {
+ 
+    #stop-watch-div
+    {
+        width:44%;
+    }
+}
+@media screen and (max-width:400px) {
+
+    #stop-watch-div {
+        width: 88%;
+    }
 
 }
