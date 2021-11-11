@@ -1,3 +1,4 @@
+
 var ms=document.getElementById("milli_seconds");
 var sec=document.getElementById("seconds");
 var min=document.getElementById("minutes");
@@ -9,6 +10,8 @@ var lap=document.getElementById('lap');
 var lap_div=document.getElementById('lap-div');
 var lap_heading=document.getElementById('lap-heading');
 
+// function to start watch
+
 function startStopWatch(){
 var time= setInterval(function(){
 
@@ -19,25 +22,33 @@ var time= setInterval(function(){
         seconds();
     }
 },10);
+//to stop the watch
 stop.addEventListener('click',function()
 {
     started=false;
     clearInterval(time)
 });
+//to reset the watch
 reset.addEventListener('click',function()
 {   
     started=false;
     clearInterval(time);
-    ms.innerText="00";
-    sec.innerText="00";
-    min.innerText="00";
-    var child=document.querySelectorAll('#lap-div p');
-    lap_div.style.visibility="hidden";
-    stop.style.display="none";
+    
+    // clearing the timer
+            ms.innerText="00";
+            sec.innerText="00";
+            min.innerText="00";
+    
+            // hidding buttons
+            lap_div.style.visibility="hidden";
+            stop.style.display="none";
             reset.style.display="none";
             lap.style.display="none";
             
-    lap_heading.style.visibility="hidden";
+            //removing  laps
+            var child=document.querySelectorAll('#lap-div p');
+    
+            lap_heading.style.visibility="hidden";
     for(let i=0;i< child.length;i++)
     {console.log(child);
         lap_div.removeChild(child[i]);
@@ -47,6 +58,7 @@ reset.addEventListener('click',function()
 
 }
 var num=1;
+//func to add laps
 lap.addEventListener('click',function(){
     if(started) 
     { 
