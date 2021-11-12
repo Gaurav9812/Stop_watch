@@ -10,6 +10,25 @@ var lap=document.getElementById('lap');
 var lap_div=document.getElementById('lap-div');
 var lap_heading=document.getElementById('lap-heading');
 
+//adding event to start
+
+var started=false;
+start.addEventListener('click',function()
+{
+    if(!started)
+       { started=true;
+            
+        //showing buttons
+
+            stop.style.display="inline-block";
+            reset.style.display="inline-block";
+            lap.style.display="inline-block";
+            
+           startStopWatch();
+        
+       }
+});
+
 // function to start watch
 
 function startStopWatch(){
@@ -63,25 +82,6 @@ reset.addEventListener('click',function()
 });
 
 }
-var num=1;
-
-//func to add laps
-
-lap.addEventListener('click',function(){
-    if(started) 
-    { 
-        lap_div.style.visibility="visible";
-        lap_heading.style.display="block";
-        var p = document.createElement('p');
-        p.classList.add('para-style');
-      p.innerHTML=num+". "+hours.innerText+":"+min.innerText+":"+sec.innerText+":"+ms.innerText;
-         num++;
-        lap_div.appendChild(p);
-        lap_div.scrollBy(0,50);
-    }
-});
-
-
 //logic for timer
 //to increase the seconds
 
@@ -119,21 +119,23 @@ function hour()
     }
 }
 
-//adding event to start
+//
+var num=1;
 
-var started=false;
-start.addEventListener('click',function()
-{
-    if(!started)
-       { started=true;
-            
-        //showing buttons
+//func to add laps
 
-            stop.style.display="inline-block";
-            reset.style.display="inline-block";
-            lap.style.display="inline-block";
-            
-           startStopWatch();
-        
-       }
+lap.addEventListener('click',function(){
+    if(started) 
+    { 
+        lap_div.style.visibility="visible";
+        lap_heading.style.display="block";
+        var p = document.createElement('p');
+        p.classList.add('para-style');
+      p.innerHTML=num+". "+hours.innerText+":"+min.innerText+":"+sec.innerText+":"+ms.innerText;
+         num++;
+        lap_div.appendChild(p);
+        lap_div.scrollBy(0,50);
+    }
 });
+
+

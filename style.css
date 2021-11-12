@@ -21,6 +21,9 @@ body{
     text-align: center;
     margin-top: 9rem;
 }
+
+/* for timer */
+
 #timer
 {
     /* background-color: antiquewhite; */
@@ -33,10 +36,16 @@ vh
     justify-content: space-around;
 
 }
+
+/* for seconds minute and hours */
+
 .num
 {
     font-size: 4rem;
 }
+
+/* for seprating num */
+
 .dots
 {
     display: flex;
@@ -52,6 +61,8 @@ vh
     background-color: black;
 
 }
+/* button like start stop lap and reset */
+
 button
 {
     font-size: 1.5rem;
@@ -83,6 +94,9 @@ button:hover
     background: cadetblue;
     display: none;
 }
+
+/* div for lap */
+
 #lap-div
 {
     visibility: hidden;
